@@ -1,9 +1,9 @@
 //#############################################################################
 //
 // GPIO example
-// This code control 3 GPIO pins (GPIO22, GPIO52, GPIO97) using both CPUs.
-// CPU1 controls GPIO22 and GPIO97
-// CPU2 controls GPIO52
+// This code control 2 GPIO pins (GPIO31 (blue builtin led), GPIO34 (red builtin led) using both CPUs.
+// CPU1 controls GPIO31
+// CPU2 controls GPIO34
 //
 //#############################################################################
 
@@ -27,35 +27,27 @@ void main(void)
     //  EALLOW, together with EDIS, allow changing them.
     EALLOW; 
    
-    // GPIO22
-    GpioCtrlRegs.GPAMUX2.bit.GPIO22 = 0; //Set the pin to behave as GPIO
-    GpioCtrlRegs.GPADIR.bit.GPIO22 = 1; //Set the pin as output
+    // GPIO31 (blue)
+    GpioCtrlRegs.GPAMUX2.bit.GPIO31 = 0; //Set the pin to behave as GPIO
+    GpioCtrlRegs.GPADIR.bit.GPIO31 = 1; //Set the pin as output
 
-    // GPIO52
-    // Even though will be controlled by CPU, only CPU1 can change these registers
-    GpioCtrlRegs.GPBMUX2.bit.GPIO52 = 0; //Set the pin to behave as GPIO
-    GpioCtrlRegs.GPBDIR.bit.GPIO52 = 1; //Set the pin as output
-    GpioCtrlRegs.GPBCSEL3.bit.GPIO52 = 2; //Set the pin to be controlled by CPU2
+    // GPIO34
+    // Even though will be controlled by CPU2, only CPU1 can change these registers
+    GpioCtrlRegs.GPBMUX1.bit.GPIO34 = 0; //Set the pin to behave as GPIO
+    GpioCtrlRegs.GPBDIR.bit.GPIO34 = 1; //Set the pin as output
+    GpioCtrlRegs.GPBCSEL1.bit.GPIO34 = 2; //Set the pin to be controlled by CPU2
     
-    // GPIO97
-    GpioCtrlRegs.GPDMUX1.bit.GPIO97 = 0; //Set the pin to behave as GPIO
-    GpioCtrlRegs.GPDDIR.bit.GPIO97 = 1; //Set the pin as output
-
     EDIS;
 
     // Change the default state of CPU1 GPIO pins
-    // GPIO22
-    GpioDataRegs.GPASET.bit.GPIO22 = 1; //Set pin state to ON
-
-    // GPIO97
-    GpioDataRegs.GPDSET.bit.GPIO97 = 1;
+    // GPIO9
+    GpioDataRegs.GPASET.bit.GPIO31= 1; //Set pin state to ON
 
     //Infinite loop
     for (;;) 
     {
         DELAY_US(500000);
-        GpioDataRegs.GPDTOGGLE.bit.GPIO97 = 1;
-        GpioDataRegs.GPATOGGLE.bit.GPIO22 = 1;
+        GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
     }
 
 }

@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v25.11.0                    
 ******************************************************************************
->> Linked Thu Mar 12 17:03:53 2026
+>> Linked Mon Aug 10 13:50:17 2026
 
 OUTPUT FILE NAME:   <gpio_bitfield_cpu1.out>
 ENTRY POINT SYMBOL: "code_start"  address: 00000000
@@ -14,7 +14,7 @@ MEMORY CONFIGURATION
 PAGE 0:
   BEGIN                 00000000   00000002  00000002  00000000  RWIX
   RAMM0                 00000123   000002dd  00000014  000002c9  RWIX
-  RAMLS0                00008000   00000800  000000e2  0000071e  RWIX
+  RAMLS0                00008000   00000800  000000d9  00000727  RWIX
   RAMLS1                00008800   00000800  00000000  00000800  RWIX
   RAMLS2                00009000   00000800  00000000  00000800  RWIX
   RAMLS3                00009800   00000800  00000000  00000800  RWIX
@@ -266,26 +266,26 @@ WdRegsFile
 *          1    00007000    0000002b     UNINITIALIZED
                   00007000    0000002b     F2837xD_GlobalVariableDefs.obj (WdRegsFile)
 
-.text.1    0    00008000    000000e2     
-                  00008000    0000002b     rts2800_fpu32_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
-                  0000802b    0000002a                            : fd_cmp28.asm.obj (.text)
-                  00008055    00000029                            : exit.c.obj (.text)
-                  0000807e    00000020                            : memcpy.c.obj (.text)
-                  0000809e    00000017                            : boot28.asm.obj (.text)
-                  000080b5    00000012                            : args_main.c.obj (.text)
-                  000080c7    00000009                            : _lock.c.obj (.text)
-                  000080d0    00000008     F2837xD_CodeStartBranch.obj (.text)
-                  000080d8    00000008     rts2800_fpu32_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none)
-                  000080e0    00000002                            : pre_init.c.obj (.text)
+.text.1    0    00008000    000000d9     
+                  00008000    0000002a     rts2800_fpu32_eabi.lib : fd_cmp28.asm.obj (.text)
+                  0000802a    00000029                            : exit.c.obj (.text)
+                  00008053    00000025     gpio_bitfield_cpu1.obj (.text)
+                  00008078    0000001c     rts2800_fpu32_eabi.lib : fs_tofdfpu32.asm.obj (.text)
+                  00008094    00000017                            : boot28.asm.obj (.text)
+                  000080ab    00000012                            : args_main.c.obj (.text)
+                  000080bd    00000009                            : _lock.c.obj (.text)
+                  000080c6    00000008     F2837xD_CodeStartBranch.obj (.text)
+                  000080ce    00000008     rts2800_fpu32_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none)
+                  000080d6    00000002                            : pre_init.c.obj (.text)
+                  000080d8    00000001                            : startup.c.obj (.text)
 
 .text.2    0    0000b000    00000800     
                   0000b000    000004bb     F2837xD_SysCtrl.obj (.text)
                   0000b4bb    00000244     F2837xD_Gpio.obj (.text)
                   0000b6ff    00000088     rts2800_fpu32_eabi.lib : fs_div28.asm.obj (.text)
                   0000b787    0000002e                            : copy_decompress_lzss.c.obj (.text:decompress:lzss)
-                  0000b7b5    0000002e     gpio_bitfield_cpu1.obj (.text)
-                  0000b7e3    0000001c     rts2800_fpu32_eabi.lib : fs_tofdfpu32.asm.obj (.text)
-                  0000b7ff    00000001                            : startup.c.obj (.text)
+                  0000b7b5    0000002b                            : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  0000b7e0    00000020                            : memcpy.c.obj (.text)
 
 MODULE SUMMARY
 
@@ -295,10 +295,10 @@ MODULE SUMMARY
        F2837xD_SysCtrl.obj              1211   8         0      
        F2837xD_GlobalVariableDefs.obj   0      0         1137   
        F2837xD_Gpio.obj                 580    0         0      
-       gpio_bitfield_cpu1.obj           46     0         0      
+       gpio_bitfield_cpu1.obj           37     0         0      
        F2837xD_usDelay.obj              4      0         0      
     +--+--------------------------------+------+---------+---------+
-       Total:                           1841   8         1137   
+       Total:                           1832   8         1137   
                                                                 
     .\device\
        F2837xD_CodeStartBranch.obj      10     0         0      
@@ -325,7 +325,7 @@ MODULE SUMMARY
        Stack:                           0      0         256    
        Linker Generated:                0      16        0      
     +--+--------------------------------+------+---------+---------+
-       Grand Total:                     2280   24        1403   
+       Grand Total:                     2271   24        1403   
 
 
 LINKER GENERATED COPY TABLES
@@ -387,7 +387,7 @@ page  address   name
 0     0000b44a  AuxAuxClkSel                         
 0     0000b434  AuxIntOsc2Sel                        
 0     0000b43e  AuxXtalOscSel                        
-0     00008055  C$$EXIT                              
+0     0000802a  C$$EXIT                              
 1     0005d200  ClkCfgRegs                           
 0     0000b49e  ConfigureTMXAnalogTrim               
 1     0005d300  CpuSysRegs                           
@@ -440,34 +440,34 @@ page  address   name
 0     00000134  __TI_Handler_Table_Limit             
 1     00000500  __TI_STACK_END                       
 abs   00000100  __TI_STACK_SIZE                      
-0     00008000  __TI_auto_init_nobinit_nopinit       
+0     0000b7b5  __TI_auto_init_nobinit_nopinit       
 1     0000a802  __TI_cleanup_ptr                     
 0     0000b787  __TI_decompress_lzss                 
-0     000080d8  __TI_decompress_none                 
+0     000080ce  __TI_decompress_none                 
 1     0000a804  __TI_dtors_ptr                       
 1     0000a800  __TI_enable_exit_profile_output      
 abs   ffffffff  __TI_pprof_out_hndl                  
 abs   ffffffff  __TI_prof_data_size                  
 abs   ffffffff  __TI_prof_data_start                 
-0     0000802b  __c28xabi_cmpd                       
+0     00008000  __c28xabi_cmpd                       
 0     0000b6ff  __c28xabi_divf                       
-0     0000b7e3  __c28xabi_ftod                       
+0     00008078  __c28xabi_ftod                       
 abs   ffffffff  __c_args__                           
 1     00000400  __stack                              
-0     000080b5  _args_main                           
-0     0000809e  _c_int00                             
+0     000080ab  _args_main                           
+0     00008094  _c_int00                             
 1     0000a806  _lock                                
-0     000080cf  _nop                                 
-0     000080cb  _register_lock                       
-0     000080c7  _register_unlock                     
-0     0000b7ff  _system_post_cinit                   
-0     000080e0  _system_pre_init                     
+0     000080c5  _nop                                 
+0     000080c1  _register_lock                       
+0     000080bd  _register_unlock                     
+0     000080d8  _system_post_cinit                   
+0     000080d6  _system_pre_init                     
 1     0000a808  _unlock                              
-0     00008055  abort                                
+0     0000802a  abort                                
 0     00000000  code_start                           
-0     00008057  exit                                 
-0     0000b7b5  main                                 
-0     0000807e  memcpy                               
+0     0000802c  exit                                 
+0     00008053  main                                 
+0     0000b7e0  memcpy                               
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -481,19 +481,20 @@ page  address   name
 0     00000134  __TI_Handler_Table_Limit             
 0     00000138  __TI_CINIT_Limit                     
 0     00000138  __TI_CINIT_Warm                      
-0     00008000  __TI_auto_init_nobinit_nopinit       
-0     0000802b  __c28xabi_cmpd                       
-0     00008055  C$$EXIT                              
-0     00008055  abort                                
-0     00008057  exit                                 
-0     0000807e  memcpy                               
-0     0000809e  _c_int00                             
-0     000080b5  _args_main                           
-0     000080c7  _register_unlock                     
-0     000080cb  _register_lock                       
-0     000080cf  _nop                                 
-0     000080d8  __TI_decompress_none                 
-0     000080e0  _system_pre_init                     
+0     00008000  __c28xabi_cmpd                       
+0     0000802a  C$$EXIT                              
+0     0000802a  abort                                
+0     0000802c  exit                                 
+0     00008053  main                                 
+0     00008078  __c28xabi_ftod                       
+0     00008094  _c_int00                             
+0     000080ab  _args_main                           
+0     000080bd  _register_unlock                     
+0     000080c1  _register_lock                       
+0     000080c5  _nop                                 
+0     000080ce  __TI_decompress_none                 
+0     000080d6  _system_pre_init                     
+0     000080d8  _system_post_cinit                   
 0     0000b000  InitSysCtrl                          
 0     0000b020  InitPeripheralClocks                 
 0     0000b0a4  DisablePeripheralClocks              
@@ -531,9 +532,8 @@ page  address   name
 0     0000b6e1  GPIO_WritePin                        
 0     0000b6ff  __c28xabi_divf                       
 0     0000b787  __TI_decompress_lzss                 
-0     0000b7b5  main                                 
-0     0000b7e3  __c28xabi_ftod                       
-0     0000b7ff  _system_post_cinit                   
+0     0000b7b5  __TI_auto_init_nobinit_nopinit       
+0     0000b7e0  memcpy                               
 1     00000400  __stack                              
 1     00000500  __TI_STACK_END                       
 1     00000c08  CpuTimer1Regs                        

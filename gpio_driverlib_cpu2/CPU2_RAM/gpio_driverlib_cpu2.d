@@ -1,7 +1,7 @@
 # FIXED
 
 gpio_driverlib_cpu2.obj: ../gpio_driverlib_cpu2.c
-gpio_driverlib_cpu2.obj: C:/Users/leona/workspace_ccstheia/gpio_driverlib_cpu2/device/driverlib.h
+gpio_driverlib_cpu2.obj: C:/dsp/gpio_driverlib_cpu2/device/driverlib.h
 gpio_driverlib_cpu2.obj: C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/inc/hw_memmap.h
 gpio_driverlib_cpu2.obj: C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/adc.h
 gpio_driverlib_cpu2.obj: C:/ti/ccs2050/ccs/tools/compiler/ti-cgt-c2000_25.11.0.LTS/include/stdbool.h
@@ -87,11 +87,11 @@ gpio_driverlib_cpu2.obj: C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/
 gpio_driverlib_cpu2.obj: C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/inc/hw_upp.h
 gpio_driverlib_cpu2.obj: C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/version.h
 gpio_driverlib_cpu2.obj: C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/driver_inclusive_terminology_mapping.h
-gpio_driverlib_cpu2.obj: C:/Users/leona/workspace_ccstheia/gpio_driverlib_cpu2/device/device.h
+gpio_driverlib_cpu2.obj: C:/dsp/gpio_driverlib_cpu2/device/device.h
 
 ../gpio_driverlib_cpu2.c:
 
-C:/Users/leona/workspace_ccstheia/gpio_driverlib_cpu2/device/driverlib.h:
+C:/dsp/gpio_driverlib_cpu2/device/driverlib.h:
 
 C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/inc/hw_memmap.h:
 
@@ -263,5 +263,5 @@ C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/version.h:
 
 C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/driver_inclusive_terminology_mapping.h:
 
-C:/Users/leona/workspace_ccstheia/gpio_driverlib_cpu2/device/device.h:
+C:/dsp/gpio_driverlib_cpu2/device/device.h:
 
