@@ -1,0 +1,17 @@
+[
+   {
+      "directory" : "C:/dsp/gpio_driverlib_cpu2/CPU2_RAM",
+      "command"   : "clang++ -I\"C:/dsp/gpio_driverlib_cpu2\" -I\"C:/dsp/gpio_driverlib_cpu2/device\" -I\"C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/\" -I\"C:/ti/ccs2050/ccs/tools/compiler/ti-cgt-c2000_25.11.0.LTS/include\" -DDEBUG -DCPU2",
+      "file"      : "C:/dsp/gpio_driverlib_cpu2/device/F2837xD_CodeStartBranch.asm"
+   },
+   {
+      "directory" : "C:/dsp/gpio_driverlib_cpu2/CPU2_RAM",
+      "command"   : "clang++ -I\"C:/dsp/gpio_driverlib_cpu2\" -I\"C:/dsp/gpio_driverlib_cpu2/device\" -I\"C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/\" -I\"C:/ti/ccs2050/ccs/tools/compiler/ti-cgt-c2000_25.11.0.LTS/include\" -DDEBUG -DCPU2 -xc",
+      "file"      : "C:/dsp/gpio_driverlib_cpu2/device/device.c"
+   },
+   {
+      "directory" : "C:/dsp/gpio_driverlib_cpu2/CPU2_RAM",
+      "command"   : "clang++ -I\"C:/dsp/gpio_driverlib_cpu2\" -I\"C:/dsp/gpio_driverlib_cpu2/device\" -I\"C:/ti/C2000Ware_6_00_01_00/driverlib/f2837xd/driverlib/\" -I\"C:/ti/ccs2050/ccs/tools/compiler/ti-cgt-c2000_25.11.0.LTS/include\" -DDEBUG -DCPU2 -xc",
+      "file"      : "C:/dsp/gpio_driverlib_cpu2/gpio_driverlib_cpu2.c"
+   }
+]
