@@ -25,12 +25,17 @@
             }
         },
         {
-            "name": "buck_i",
+            "name": "buck_diodo",
             "type": "ccs-debug",
             "request": "launch",
             "projectInfo": {
-                "name": "buck_i",
-                "resourceId": "/buck_i"
+                "name": "buck_diodo",
+                "resourceId": "/buck_diodo"
+            },
+            "launchSettings": {
+                "coresToLoadForProjectLaunch": [
+                    "C28xx_CPU1"
+                ]
             }
         }
     ]
