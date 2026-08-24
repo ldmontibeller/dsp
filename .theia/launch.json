@@ -1,4 +1,14 @@
 {
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "name": "buck",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "buck",
+                "resourceId": "/buck"
+            }
+        }
+    ]
 }
