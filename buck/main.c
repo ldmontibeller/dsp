@@ -3,6 +3,7 @@
 #include "device.h"
 #include "Peripheral_Setup.h"
 #include "math.h"
+#include<stdint.h>
 
 uint16_t adc_sample = 0;
 uint16_t adc_sample1 = 0;
@@ -19,19 +20,19 @@ int malha = 1;
 int malha_anterior = -1; // Variavel para detectar a transicao de malha
 
 // --- GANHOS CONTINUOS DOS CONTROLES (ESCOPO GLOBAL) ---
-float Kp_IL = 18.289 * 0.00054;
-float Ki_IL = 18.289;
+// float Kp_IL = 18.289 * 0.00054;
+// float Ki_IL = 18.289;
 
 //Ganhos Leonardo
-// float Kp_IL = 271.1858 * 0.001445985684522;
-// float Ki_IL = 271.1858;
+float Kp_IL = 271.1858 * 0.001445985684522;
+float Ki_IL = 271.1858;
 
 float Kp_Vo = 33.269 * 0.00055;
 float Ki_Vo = 33.269;
 
 // --- VARIAVEIS DA MALHA DE CORRENTE (_IL) ---
 float Umin_IL = 0;
-float Umax_IL = 0.2;
+float Umax_IL = 0.3;
 float v1_IL = 0;
 float uIk1_IL = 0;
 float uIk_IL = 0;
@@ -56,7 +57,7 @@ float U = 0;
 
 // Referencias Globais
 float V_ref = 4.0f;
-float I_ref = 4.0f;
+float I_ref = 8.0f;
 
 __interrupt void isr_adc(void);
 
