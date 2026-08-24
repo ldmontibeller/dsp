@@ -60,6 +60,7 @@
                                     <listOptionValue value="DEBUG"/>
                                     <listOptionValue value="_DUAL_HEADERS"/>
                                     <listOptionValue value="CPU1"/>
+                                    <listOptionValue value="_LAUNCHXL_F28379D"/>
                                 </option>
                                 <option id="com.ti.ccstudio.buildDefinitions.C2000_25.11.compilerID.OPT_LEVEL.1957007843" superClass="com.ti.ccstudio.buildDefinitions.C2000_25.11.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.C2000_25.11.compilerID.OPT_LEVEL.off" valueType="enumerated"/>
                                 <option id="com.ti.ccstudio.buildDefinitions.C2000_25.11.compilerID.DIAG_SUPPRESS.1632203734" superClass="com.ti.ccstudio.buildDefinitions.C2000_25.11.compilerID.DIAG_SUPPRESS" valueType="stringList">

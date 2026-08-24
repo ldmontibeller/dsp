@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v25.11.0                    
 ******************************************************************************
->> Linked Mon Aug 24 09:43:30 2026
+>> Linked Mon Aug 24 10:42:33 2026
 
 OUTPUT FILE NAME:   <buck.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 000088f0
@@ -13,8 +13,8 @@ MEMORY CONFIGURATION
 ----------------------  --------  ---------  --------  --------  ----  --------
 PAGE 0:
   BEGIN                 00000000   00000002  00000002  00000000  RWIX
-  RAMM0                 00000123   000002dd  000000d6  00000207  RWIX
-  RAMLS0                00008000   00000800  000007f7  00000009  RWIX
+  RAMM0                 00000123   000002dd  000000db  00000202  RWIX
+  RAMLS0                00008000   00000800  000007fa  00000006  RWIX
   RAMLS1                00008800   00000800  000001ea  00000616  RWIX
   RAMLS2                00009000   00000800  00000000  00000800  RWIX
   RAMLS3                00009800   00000800  00000000  00000800  RWIX
@@ -124,7 +124,7 @@ PAGE 1:
   OUTPUTXBAR            00007a80   00000040  00000040  00000000  RWIX
   GPIOCTRL              00007c00   00000180  00000180  00000000  RWIX
   GPIODATA              00007f00   00000030  00000030  00000000  RWIX
-  RAMLS5                0000a800   00000800  000003bf  00000441  RWIX
+  RAMLS5                0000a800   00000800  000003c1  0000043f  RWIX
   RAMD1                 0000b800   00000800  00000000  00000800  RWIX
   RAMGS0                0000c000   00001000  00000000  00001000  RWIX
   RAMGS1                0000d000   00001000  00000000  00001000  RWIX
@@ -180,13 +180,13 @@ codestart
 *          0    00000000    00000002     
                   00000000    00000002     F2837xD_CodeStartBranch.obj (codestart)
 
-.cinit     0    00000123    000000ce     
-                  00000123    000000a5     main.obj (.cinit)
-                  000001c8    0000000f     device.obj (.cinit)
-                  000001d7    0000000e     rts2800_fpu32.lib : exit.c.obj (.cinit)
-                  000001e5    00000005                       : _lock.c.obj (.cinit:__lock)
-                  000001ea    00000005                       : _lock.c.obj (.cinit:__unlock)
-                  000001ef    00000002     --HOLE-- [fill = 0]
+.cinit     0    00000123    000000d3     
+                  00000123    000000aa     main.obj (.cinit)
+                  000001cd    0000000f     device.obj (.cinit)
+                  000001dc    0000000e     rts2800_fpu32.lib : exit.c.obj (.cinit)
+                  000001ea    00000005                       : _lock.c.obj (.cinit:__lock)
+                  000001ef    00000005                       : _lock.c.obj (.cinit:__unlock)
+                  000001f4    00000002     --HOLE-- [fill = 0]
 
 .reset     0    003fffc0    00000002     DSECT
                   003fffc0    00000002     rts2800_fpu32.lib : boot28.asm.obj (.reset)
@@ -538,18 +538,18 @@ GpioDataRegsFile
                   0000aa82    000000bc                        : gpio.obj (.econst:.string)
                   0000ab3e    00000013     device.obj (.econst:.string)
 
-.ebss      1    0000ab52    0000006e     UNINITIALIZED
+.ebss      1    0000ab52    00000070     UNINITIALIZED
                   0000ab52    00000006     device.obj (.ebss)
                   0000ab58    00000006     rts2800_fpu32.lib : exit.c.obj (.ebss)
                   0000ab5e    00000002                       : _lock.c.obj (.ebss:__lock)
                   0000ab60    00000002                       : _lock.c.obj (.ebss:__unlock)
                   0000ab62    0000001e     --HOLE--
-                  0000ab80    00000040     main.obj (.ebss)
+                  0000ab80    00000042     main.obj (.ebss)
 
 .TI.ramfunc 
-*          0    000001f1    00000008     
-                  000001f1    00000004     F2837xD_usDelay.obj (.TI.ramfunc)
-                  000001f5    00000004     driverlib_coff.lib : sysctl.obj (.TI.ramfunc)
+*          0    000001f6    00000008     
+                  000001f6    00000004     F2837xD_usDelay.obj (.TI.ramfunc)
+                  000001fa    00000004     driverlib_coff.lib : sysctl.obj (.TI.ramfunc)
 
 GETBUFFER 
 *          0    0003f800    00000000     DSECT
@@ -671,13 +671,13 @@ UidRegsFile
 *          1    000703c0    00000010     UNINITIALIZED
                   000703c0    00000010     F2837xD_GlobalVariableDefs.obj (UidRegsFile)
 
-.text.1    0    00008000    000007f7     
+.text.1    0    00008000    000007fa     
                   00008000    000004ab     F2837xD_SysCtrl.obj (.text)
-                  000084ab    0000019d     main.obj (.text:retain)
-                  00008648    000000f6     Peripheral_Setup.obj (.text)
-                  0000873e    00000088     rts2800_fpu32.lib : fs_div28.asm.obj (.text)
-                  000087c6    00000029                       : exit.c.obj (.text)
-                  000087ef    00000008     F2837xD_CodeStartBranch.obj (.text)
+                  000084ab    000001a0     main.obj (.text:retain)
+                  0000864b    000000f6     Peripheral_Setup.obj (.text)
+                  00008741    00000088     rts2800_fpu32.lib : fs_div28.asm.obj (.text)
+                  000087c9    00000029                       : exit.c.obj (.text)
+                  000087f2    00000008     F2837xD_CodeStartBranch.obj (.text)
 
 .text.2    0    00008800    000001ea     
                   00008800    000000f0     F2837xD_Adc.obj (.text)
@@ -704,7 +704,7 @@ MODULE SUMMARY
        F2837xD_GlobalVariableDefs.obj   0      0                  9870              
        F2837xD_DefaultISR.obj           1413   0                  0                 
        F2837xD_SysCtrl.obj              1195   0                  0                 
-       main.obj                         455    165                64                
+       main.obj                         458    170                66                
        F2837xD_Gpio.obj                 580    0                  0                 
        F2837xD_PieVect.obj              38     448                0                 
        Peripheral_Setup.obj             246    0                  0                 
@@ -713,7 +713,7 @@ MODULE SUMMARY
        F2837xD_CodeStartBranch.obj      10     0                  0                 
        F2837xD_usDelay.obj              4      0                  0                 
     +--+--------------------------------+------+------------------+--------------------+
-       Total:                           4221   613                9934              
+       Total:                           4224   618                9936              
                                                                                     
     .\device\
        device.obj                       0      34                 6                 
@@ -741,7 +741,7 @@ MODULE SUMMARY
                                                                                     
        Stack:                           0      0                  256               
     +--+--------------------------------+------+------------------+--------------------+
-       Grand Total:                     4586   1053               10206             
+       Grand Total:                     4589   1058               10208             
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
@@ -920,31 +920,33 @@ address     data page           name
 0000ab88     2ae (0000ab80)     _il
 0000ab8a     2ae (0000ab80)     _vo
 0000ab8c     2ae (0000ab80)     _f
-0000ab8e     2ae (0000ab80)     _Kp_IL
-0000ab90     2ae (0000ab80)     _Ki_IL
-0000ab92     2ae (0000ab80)     _Kp_Vo
-0000ab94     2ae (0000ab80)     _Ki_Vo
-0000ab96     2ae (0000ab80)     _Umin_IL
-0000ab98     2ae (0000ab80)     _Umax_IL
-0000ab9a     2ae (0000ab80)     _v1_IL
-0000ab9c     2ae (0000ab80)     _uIk1_IL
-0000ab9e     2ae (0000ab80)     _uIk_IL
-0000aba0     2ae (0000ab80)     _w1_IL
-0000aba2     2ae (0000ab80)     _uP_IL
-0000aba4     2ae (0000ab80)     _ek_IL
-0000aba6     2ae (0000ab80)     _U_IL
-0000aba8     2ae (0000ab80)     _Umin_Vo
-0000abaa     2ae (0000ab80)     _Umax_Vo
-0000abac     2ae (0000ab80)     _v1_Vo
-0000abae     2ae (0000ab80)     _uIk1_Vo
-0000abb0     2ae (0000ab80)     _uIk_Vo
-0000abb2     2ae (0000ab80)     _w1_Vo
-0000abb4     2ae (0000ab80)     _uP_Vo
-0000abb6     2ae (0000ab80)     _ek_Vo
-0000abb8     2ae (0000ab80)     _U_Vo
-0000abba     2ae (0000ab80)     _U
-0000abbc     2ae (0000ab80)     _V_ref
-0000abbe     2ae (0000ab80)     _I_ref
+0000ab8e     2ae (0000ab80)     _perc
+0000ab90     2ae (0000ab80)     _Kp_IL
+0000ab92     2ae (0000ab80)     _Ki_IL
+0000ab94     2ae (0000ab80)     _Kp_Vo
+0000ab96     2ae (0000ab80)     _Ki_Vo
+0000ab98     2ae (0000ab80)     _Umin_IL
+0000ab9a     2ae (0000ab80)     _Umax_IL
+0000ab9c     2ae (0000ab80)     _v1_IL
+0000ab9e     2ae (0000ab80)     _uIk1_IL
+0000aba0     2ae (0000ab80)     _uIk_IL
+0000aba2     2ae (0000ab80)     _w1_IL
+0000aba4     2ae (0000ab80)     _uP_IL
+0000aba6     2ae (0000ab80)     _ek_IL
+0000aba8     2ae (0000ab80)     _U_IL
+0000abaa     2ae (0000ab80)     _Umin_Vo
+0000abac     2ae (0000ab80)     _Umax_Vo
+0000abae     2ae (0000ab80)     _v1_Vo
+0000abb0     2ae (0000ab80)     _uIk1_Vo
+0000abb2     2ae (0000ab80)     _uIk_Vo
+0000abb4     2ae (0000ab80)     _w1_Vo
+0000abb6     2ae (0000ab80)     _uP_Vo
+0000abb8     2ae (0000ab80)     _ek_Vo
+0000abba     2ae (0000ab80)     _U_Vo
+0000abbc     2ae (0000ab80)     _U
+0000abbe     2ae (0000ab80)     _V_ref
+
+0000abc0     2af (0000abc0)     _I_ref
 
 00047000    11c0 (00047000)     _Emif1Regs
 
@@ -995,8 +997,8 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 page  address   name                                  
 ----  -------   ----                                  
 abs   ffffffff  .text                                 
-0     000087c6  C$$EXIT                               
-0     0000873e  FS$$DIV                               
+0     000087c9  C$$EXIT                               
+0     00008741  FS$$DIV                               
 0     0000b0be  _ADCA1_ISR                            
 0     0000b33e  _ADCA2_ISR                            
 0     0000b348  _ADCA3_ISR                            
@@ -1162,7 +1164,7 @@ abs   ffffffff  .text
 1     0000ab56  _Example_Fail                         
 1     0000ab54  _Example_PassCount                    
 1     0000ab52  _Example_Result                       
-0     000001f1  _F28x_usDelay                         
+0     000001f6  _F28x_usDelay                         
 0     0000b528  _FLASH_CORRECTABLE_ERROR_ISR          
 0     0000b3fc  _FPU_OVERFLOW_ISR                     
 0     0000b406  _FPU_UNDERFLOW_ISR                    
@@ -1198,7 +1200,7 @@ abs   ffffffff  .text
 0     0000b41a  _IPC1_ISR                             
 0     0000b424  _IPC2_ISR                             
 0     0000b42e  _IPC3_ISR                             
-1     0000abbe  _I_ref                                
+1     0000abc0  _I_ref                                
 0     000082e0  _InitAuxPll                           
 0     0000b585  _InitGpio                             
 0     00008020  _InitPeripheralClocks                 
@@ -1208,10 +1210,10 @@ abs   ffffffff  .text
 0     000080f1  _InitSysPll                           
 1     00007900  _InputXbarRegs                        
 1     00050000  _IpcRegs                              
-1     0000ab90  _Ki_IL                                
-1     0000ab94  _Ki_Vo                                
-1     0000ab8e  _Kp_IL                                
-1     0000ab92  _Kp_Vo                                
+1     0000ab92  _Ki_IL                                
+1     0000ab96  _Ki_Vo                                
+1     0000ab90  _Kp_IL                                
+1     0000ab94  _Kp_Vo                                
 0     0000b230  _MCBSPA_RX_ISR                        
 0     0000b23a  _MCBSPA_TX_ISR                        
 0     0000b244  _MCBSPB_RX_ISR                        
@@ -1260,21 +1262,21 @@ abs   ffffffff  .text
 1     00005e80  _Sdfm2Regs                            
 0     000080bc  _SeizeFlashPump                       
 0     000080d5  _ServiceDog                           
-0     000086e1  _Setup_ADC                            
-0     00008648  _Setup_GPIO                           
-0     00008668  _Setup_PWM1                           
+0     000086e4  _Setup_ADC                            
+0     0000864b  _Setup_GPIO                           
+0     0000866b  _Setup_PWM1                           
 1     00006100  _SpiaRegs                             
 1     00006110  _SpibRegs                             
 1     00006120  _SpicRegs                             
 1     00007940  _SyncSocRegs                          
-0     000001f5  _SysCtl_delay                         
+0     000001fa  _SysCtl_delay                         
 0     000083f0  _SysIntOsc1Sel                        
 0     00008400  _SysIntOsc2Sel                        
 0     00008414  _SysXtalOscSel                        
 0     0000b0fa  _TIMER0_ISR                           
 0     0000b000  _TIMER1_ISR                           
 0     0000b00a  _TIMER2_ISR                           
-1     0000abba  _U                                    
+1     0000abbc  _U                                    
 0     0000b4b0  _UPPA_ISR                             
 0     0000b4ba  _USBA_ISR                             
 0     0000b0a0  _USER10_ISR                           
@@ -1289,16 +1291,16 @@ abs   ffffffff  .text
 0     0000b082  _USER7_ISR                            
 0     0000b08c  _USER8_ISR                            
 0     0000b096  _USER9_ISR                            
-1     0000aba6  _U_IL                                 
-1     0000abb8  _U_Vo                                 
+1     0000aba8  _U_IL                                 
+1     0000abba  _U_Vo                                 
 1     000703c0  _UidRegs                              
-1     0000ab98  _Umax_IL                              
-1     0000abaa  _Umax_Vo                              
-1     0000ab96  _Umin_IL                              
-1     0000aba8  _Umin_Vo                              
+1     0000ab9a  _Umax_IL                              
+1     0000abac  _Umax_Vo                              
+1     0000ab98  _Umin_IL                              
+1     0000abaa  _Umin_Vo                              
 1     00006200  _UppRegs                              
 0     0000b3f2  _VCU_ISR                              
-1     0000abbc  _V_ref                                
+1     0000abbe  _V_ref                                
 0     0000b104  _WAKE_ISR                             
 1     00007000  _WdRegs                               
 0     0000b0dc  _XINT1_ISR                            
@@ -1331,16 +1333,16 @@ abs   ffffffff  ___text__
 0     0000b7fe  __system_post_cinit                   
 0     0000b7fc  __system_pre_init                     
 1     0000ab60  __unlock                              
-0     000087c6  _abort                                
+0     000087c9  _abort                                
 1     0000ab80  _adc_sample                           
 1     0000ab81  _adc_sample1                          
 1     0000ab82  _adc_sample2                          
 0     000088f0  _c_int00                              
 0     00008994  _copy_in                              
 1     0000ab86  _count                                
-1     0000aba4  _ek_IL                                
-1     0000abb6  _ek_Vo                                
-0     000087c8  _exit                                 
+1     0000aba6  _ek_IL                                
+1     0000abb8  _ek_Vo                                
+0     000087cb  _exit                                 
 1     0000ab8c  _f                                    
 1     0000ab88  _il                                   
 0     000084ab  _isr_adc                              
@@ -1348,17 +1350,18 @@ abs   ffffffff  ___text__
 1     0000ab83  _malha                                
 1     0000ab84  _malha_anterior                       
 0     000089b8  _memcpy                               
-1     0000ab9c  _uIk1_IL                              
-1     0000abae  _uIk1_Vo                              
-1     0000ab9e  _uIk_IL                               
-1     0000abb0  _uIk_Vo                               
-1     0000aba2  _uP_IL                                
-1     0000abb4  _uP_Vo                                
-1     0000ab9a  _v1_IL                                
-1     0000abac  _v1_Vo                                
+1     0000ab8e  _perc                                 
+1     0000ab9e  _uIk1_IL                              
+1     0000abb0  _uIk1_Vo                              
+1     0000aba0  _uIk_IL                               
+1     0000abb2  _uIk_Vo                               
+1     0000aba4  _uP_IL                                
+1     0000abb6  _uP_Vo                                
+1     0000ab9c  _v1_IL                                
+1     0000abae  _v1_Vo                                
 1     0000ab8a  _vo                                   
-1     0000aba0  _w1_IL                                
-1     0000abb2  _w1_Vo                                
+1     0000aba2  _w1_IL                                
+1     0000abb4  _w1_Vo                                
 abs   ffffffff  binit                                 
 0     00000123  cinit                                 
 0     00000000  code_start                            
@@ -1373,8 +1376,8 @@ page  address   name
 0     00000000  code_start                            
 0     00000123  ___cinit__                            
 0     00000123  cinit                                 
-0     000001f1  _F28x_usDelay                         
-0     000001f5  _SysCtl_delay                         
+0     000001f6  _F28x_usDelay                         
+0     000001fa  _SysCtl_delay                         
 0     00008000  _InitSysCtrl                          
 0     00008020  _InitPeripheralClocks                 
 0     000080a4  _DisablePeripheralClocks              
@@ -1397,13 +1400,13 @@ page  address   name
 0     00008471  _HIB                                  
 0     0000848e  _ConfigureTMXAnalogTrim               
 0     000084ab  _isr_adc                              
-0     00008648  _Setup_GPIO                           
-0     00008668  _Setup_PWM1                           
-0     000086e1  _Setup_ADC                            
-0     0000873e  FS$$DIV                               
-0     000087c6  C$$EXIT                               
-0     000087c6  _abort                                
-0     000087c8  _exit                                 
+0     0000864b  _Setup_GPIO                           
+0     0000866b  _Setup_PWM1                           
+0     000086e4  _Setup_ADC                            
+0     00008741  FS$$DIV                               
+0     000087c9  C$$EXIT                               
+0     000087c9  _abort                                
+0     000087cb  _exit                                 
 0     00008800  _AdcSetMode                           
 0     000088b6  _CalAdcINL                            
 0     000088f0  _c_int00                              
@@ -1679,31 +1682,32 @@ page  address   name
 1     0000ab88  _il                                   
 1     0000ab8a  _vo                                   
 1     0000ab8c  _f                                    
-1     0000ab8e  _Kp_IL                                
-1     0000ab90  _Ki_IL                                
-1     0000ab92  _Kp_Vo                                
-1     0000ab94  _Ki_Vo                                
-1     0000ab96  _Umin_IL                              
-1     0000ab98  _Umax_IL                              
-1     0000ab9a  _v1_IL                                
-1     0000ab9c  _uIk1_IL                              
-1     0000ab9e  _uIk_IL                               
-1     0000aba0  _w1_IL                                
-1     0000aba2  _uP_IL                                
-1     0000aba4  _ek_IL                                
-1     0000aba6  _U_IL                                 
-1     0000aba8  _Umin_Vo                              
-1     0000abaa  _Umax_Vo                              
-1     0000abac  _v1_Vo                                
-1     0000abae  _uIk1_Vo                              
-1     0000abb0  _uIk_Vo                               
-1     0000abb2  _w1_Vo                                
-1     0000abb4  _uP_Vo                                
-1     0000abb6  _ek_Vo                                
-1     0000abb8  _U_Vo                                 
-1     0000abba  _U                                    
-1     0000abbc  _V_ref                                
-1     0000abbe  _I_ref                                
+1     0000ab8e  _perc                                 
+1     0000ab90  _Kp_IL                                
+1     0000ab92  _Ki_IL                                
+1     0000ab94  _Kp_Vo                                
+1     0000ab96  _Ki_Vo                                
+1     0000ab98  _Umin_IL                              
+1     0000ab9a  _Umax_IL                              
+1     0000ab9c  _v1_IL                                
+1     0000ab9e  _uIk1_IL                              
+1     0000aba0  _uIk_IL                               
+1     0000aba2  _w1_IL                                
+1     0000aba4  _uP_IL                                
+1     0000aba6  _ek_IL                                
+1     0000aba8  _U_IL                                 
+1     0000abaa  _Umin_Vo                              
+1     0000abac  _Umax_Vo                              
+1     0000abae  _v1_Vo                                
+1     0000abb0  _uIk1_Vo                              
+1     0000abb2  _uIk_Vo                               
+1     0000abb4  _w1_Vo                                
+1     0000abb6  _uP_Vo                                
+1     0000abb8  _ek_Vo                                
+1     0000abba  _U_Vo                                 
+1     0000abbc  _U                                    
+1     0000abbe  _V_ref                                
+1     0000abc0  _I_ref                                
 1     00047000  _Emif1Regs                            
 1     00047800  _Emif2Regs                            
 1     00048000  _CanaRegs                             
@@ -1741,4 +1745,4 @@ abs   ffffffff  binit
 abs   ffffffff  etext                                 
 abs   ffffffff  pinit                                 
 
-[370 symbols]
+[371 symbols]
