@@ -1,42 +1,4 @@
 {
     "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "gpio_bitfield_cpu1",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "gpio_bitfield_cpu1",
-                "resourceId": "/gpio_bitfield_cpu1"
-            },
-            "launchSettings": {
-                "coresToLoadForProjectLaunch": [
-                    "C28xx_CPU1"
-                ]
-            }
-        },
-        {
-            "name": "gpio_driverlib_cpu2",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "gpio_driverlib_cpu2",
-                "resourceId": "/gpio_driverlib_cpu2"
-            }
-        },
-        {
-            "name": "buck_diodo",
-            "type": "ccs-debug",
-            "request": "launch",
-            "projectInfo": {
-                "name": "buck_diodo",
-                "resourceId": "/buck_diodo"
-            },
-            "launchSettings": {
-                "coresToLoadForProjectLaunch": [
-                    "C28xx_CPU1"
-                ]
-            }
-        }
-    ]
+    "configurations": []
 }
