@@ -112,7 +112,7 @@ void Setup_ADC(void)
     EALLOW;
     CpuSysRegs.PCLKCR13.bit.ADC_A = 1;   // habilita clock ADCA
     AdcaRegs.ADCCTL2.bit.PRESCALE = 6;
-    AdcSetMode(ADC_ADCA, ADC_RESOLUTION_12BIT, ADC_SIGNALMODE_SINGLE);
+    AdcSetMode(0, 0, 0);
     AdcaRegs.ADCCTL1.bit.INTPULSEPOS = 1;               // set pulse um ciclo antes do resultado
     AdcaRegs.ADCCTL1.bit.ADCPWDNZ = 1;                  // liga o adc
     for(i = 0; i < 1000; i++){}

@@ -20,6 +20,7 @@ C_SRCS += \
 ../F2837xD_GlobalVariableDefs.c \
 ../F2837xD_Gpio.c \
 ../F2837xD_SysCtrl.c \
+../Peripheral_Setup.c \
 ../buck_diodo_main_cpu1.c 
 
 C_DEPS += \
@@ -27,6 +28,7 @@ C_DEPS += \
 ./F2837xD_GlobalVariableDefs.d \
 ./F2837xD_Gpio.d \
 ./F2837xD_SysCtrl.d \
+./Peripheral_Setup.d \
 ./buck_diodo_main_cpu1.d 
 
 OBJS += \
@@ -35,6 +37,7 @@ OBJS += \
 ./F2837xD_Gpio.obj \
 ./F2837xD_SysCtrl.obj \
 ./F2837xD_usDelay.obj \
+./Peripheral_Setup.obj \
 ./buck_diodo_main_cpu1.obj 
 
 ASM_DEPS += \
@@ -46,6 +49,7 @@ OBJS__QUOTED += \
 "F2837xD_Gpio.obj" \
 "F2837xD_SysCtrl.obj" \
 "F2837xD_usDelay.obj" \
+"Peripheral_Setup.obj" \
 "buck_diodo_main_cpu1.obj" 
 
 C_DEPS__QUOTED += \
@@ -53,6 +57,7 @@ C_DEPS__QUOTED += \
 "F2837xD_GlobalVariableDefs.d" \
 "F2837xD_Gpio.d" \
 "F2837xD_SysCtrl.d" \
+"Peripheral_Setup.d" \
 "buck_diodo_main_cpu1.d" 
 
 ASM_DEPS__QUOTED += \
@@ -63,6 +68,7 @@ C_SRCS__QUOTED += \
 "../F2837xD_GlobalVariableDefs.c" \
 "../F2837xD_Gpio.c" \
 "../F2837xD_SysCtrl.c" \
+"../Peripheral_Setup.c" \
 "../buck_diodo_main_cpu1.c" 
 
 ASM_SRCS__QUOTED += \

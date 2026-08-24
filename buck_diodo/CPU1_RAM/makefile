@@ -15,6 +15,7 @@ ORDERED_OBJS += \
 "./F2837xD_Gpio.obj" \
 "./F2837xD_SysCtrl.obj" \
 "./F2837xD_usDelay.obj" \
+"./Peripheral_Setup.obj" \
 "./buck_diodo_main_cpu1.obj" \
 "./device/F2837xD_CodeStartBranch.obj" \
 "./device/device.obj" \
@@ -145,8 +146,8 @@ buck_diodo.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "F2837xD_EPwm.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "buck_diodo_main_cpu1.obj" "device\F2837xD_CodeStartBranch.obj" "device\device.obj" 
-	-$(RM) "F2837xD_EPwm.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_SysCtrl.d" "buck_diodo_main_cpu1.d" "device\device.d" 
+	-$(RM) "F2837xD_EPwm.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "Peripheral_Setup.obj" "buck_diodo_main_cpu1.obj" "device\F2837xD_CodeStartBranch.obj" "device\device.obj" 
+	-$(RM) "F2837xD_EPwm.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_SysCtrl.d" "Peripheral_Setup.d" "buck_diodo_main_cpu1.d" "device\device.d" 
 	-$(RM) "F2837xD_usDelay.d" "device\F2837xD_CodeStartBranch.d" 
 	-@echo ' '
 
