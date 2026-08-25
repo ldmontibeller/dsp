@@ -62,7 +62,10 @@ float U = 0;
 
 // Referencias Globais
 float V_ref = 4.0f;
-float I_ref = 4.0f;
+float I_ref_DC = 4.0f;       // Fixed base value for current
+float f_sine = 100.0f;       // Frequency of the sine wave in Hz
+float theta = 0.0f;          // Phase accumulator
+float I_ref = 4.0f;          // Instantaneous reference (updated in ISR)
 
 __interrupt void isr_adc(void);
 
@@ -141,6 +144,18 @@ __interrupt void isr_adc(void)
         // Atualiza o estado anterior para nao repetir o reset no proximo ciclo
         malha_anterior = malha;
     }
+
+    // --- UPDATE VARIABLE REFERENCE ---
+    // Calculate phase step: delta_theta = 2 * pi * f_sine / f_sampling
+    float delta_theta = 2.0f * 3.14159265f * f_sine / f;
+    
+    theta += delta_theta;
+    if (theta > (2.0f * 3.14159265f)) {
+        theta -= (2.0f * 3.14159265f); // Wrap around at 2*pi
+    }
+
+    // I_ref = DC + (5% of DC * sin(theta))
+    I_ref = I_ref_DC + (0.05f * I_ref_DC * sinf(theta));
 
     // =========================================================================
     // EXECUCAO DAS MALHAS DE CONTROLE
