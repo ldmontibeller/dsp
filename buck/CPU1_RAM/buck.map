@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v25.11.0                    
 ******************************************************************************
->> Linked Mon Aug 24 11:31:52 2026
+>> Linked Tue Aug 25 11:53:05 2026
 
 OUTPUT FILE NAME:   <buck.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 000088f0
@@ -14,7 +14,7 @@ MEMORY CONFIGURATION
 PAGE 0:
   BEGIN                 00000000   00000002  00000002  00000000  RWIX
   RAMM0                 00000123   000002dd  000000db  00000202  RWIX
-  RAMLS0                00008000   00000800  000007fa  00000006  RWIX
+  RAMLS0                00008000   00000800  000007f8  00000008  RWIX
   RAMLS1                00008800   00000800  000001ea  00000616  RWIX
   RAMLS2                00009000   00000800  00000000  00000800  RWIX
   RAMLS3                00009800   00000800  00000000  00000800  RWIX
@@ -671,13 +671,13 @@ UidRegsFile
 *          1    000703c0    00000010     UNINITIALIZED
                   000703c0    00000010     F2837xD_GlobalVariableDefs.obj (UidRegsFile)
 
-.text.1    0    00008000    000007fa     
+.text.1    0    00008000    000007f8     
                   00008000    000004ab     F2837xD_SysCtrl.obj (.text)
-                  000084ab    000001a0     main.obj (.text:retain)
-                  0000864b    000000f6     Peripheral_Setup.obj (.text)
-                  00008741    00000088     rts2800_fpu32.lib : fs_div28.asm.obj (.text)
-                  000087c9    00000029                       : exit.c.obj (.text)
-                  000087f2    00000008     F2837xD_CodeStartBranch.obj (.text)
+                  000084ab    0000019e     main.obj (.text:retain)
+                  00008649    000000f6     Peripheral_Setup.obj (.text)
+                  0000873f    00000088     rts2800_fpu32.lib : fs_div28.asm.obj (.text)
+                  000087c7    00000029                       : exit.c.obj (.text)
+                  000087f0    00000008     F2837xD_CodeStartBranch.obj (.text)
 
 .text.2    0    00008800    000001ea     
                   00008800    000000f0     F2837xD_Adc.obj (.text)
@@ -704,7 +704,7 @@ MODULE SUMMARY
        F2837xD_GlobalVariableDefs.obj   0      0                  9870              
        F2837xD_DefaultISR.obj           1413   0                  0                 
        F2837xD_SysCtrl.obj              1195   0                  0                 
-       main.obj                         458    170                66                
+       main.obj                         456    170                66                
        F2837xD_Gpio.obj                 580    0                  0                 
        F2837xD_PieVect.obj              38     448                0                 
        Peripheral_Setup.obj             246    0                  0                 
@@ -713,7 +713,7 @@ MODULE SUMMARY
        F2837xD_CodeStartBranch.obj      10     0                  0                 
        F2837xD_usDelay.obj              4      0                  0                 
     +--+--------------------------------+------+------------------+--------------------+
-       Total:                           4224   618                9936              
+       Total:                           4222   618                9936              
                                                                                     
     .\device\
        device.obj                       0      34                 6                 
@@ -741,7 +741,7 @@ MODULE SUMMARY
                                                                                     
        Stack:                           0      0                  256               
     +--+--------------------------------+------+------------------+--------------------+
-       Grand Total:                     4589   1058               10208             
+       Grand Total:                     4587   1058               10208             
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
@@ -920,7 +920,7 @@ address     data page           name
 0000ab88     2ae (0000ab80)     _il
 0000ab8a     2ae (0000ab80)     _vo
 0000ab8c     2ae (0000ab80)     _f
-0000ab8e     2ae (0000ab80)     _perc
+0000ab8e     2ae (0000ab80)     _aux
 0000ab90     2ae (0000ab80)     _Kp_IL
 0000ab92     2ae (0000ab80)     _Ki_IL
 0000ab94     2ae (0000ab80)     _Kp_Vo
@@ -997,8 +997,8 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 page  address   name                                  
 ----  -------   ----                                  
 abs   ffffffff  .text                                 
-0     000087c9  C$$EXIT                               
-0     00008741  FS$$DIV                               
+0     000087c7  C$$EXIT                               
+0     0000873f  FS$$DIV                               
 0     0000b0be  _ADCA1_ISR                            
 0     0000b33e  _ADCA2_ISR                            
 0     0000b348  _ADCA3_ISR                            
@@ -1262,9 +1262,9 @@ abs   ffffffff  .text
 1     00005e80  _Sdfm2Regs                            
 0     000080bc  _SeizeFlashPump                       
 0     000080d5  _ServiceDog                           
-0     000086e4  _Setup_ADC                            
-0     0000864b  _Setup_GPIO                           
-0     0000866b  _Setup_PWM1                           
+0     000086e2  _Setup_ADC                            
+0     00008649  _Setup_GPIO                           
+0     00008669  _Setup_PWM1                           
 1     00006100  _SpiaRegs                             
 1     00006110  _SpibRegs                             
 1     00006120  _SpicRegs                             
@@ -1333,16 +1333,17 @@ abs   ffffffff  ___text__
 0     0000b7fe  __system_post_cinit                   
 0     0000b7fc  __system_pre_init                     
 1     0000ab60  __unlock                              
-0     000087c9  _abort                                
+0     000087c7  _abort                                
 1     0000ab80  _adc_sample                           
 1     0000ab81  _adc_sample1                          
 1     0000ab82  _adc_sample2                          
+1     0000ab8e  _aux                                  
 0     000088f0  _c_int00                              
 0     00008994  _copy_in                              
 1     0000ab86  _count                                
 1     0000aba6  _ek_IL                                
 1     0000abb8  _ek_Vo                                
-0     000087cb  _exit                                 
+0     000087c9  _exit                                 
 1     0000ab8c  _f                                    
 1     0000ab88  _il                                   
 0     000084ab  _isr_adc                              
@@ -1350,7 +1351,6 @@ abs   ffffffff  ___text__
 1     0000ab83  _malha                                
 1     0000ab84  _malha_anterior                       
 0     000089b8  _memcpy                               
-1     0000ab8e  _perc                                 
 1     0000ab9e  _uIk1_IL                              
 1     0000abb0  _uIk1_Vo                              
 1     0000aba0  _uIk_IL                               
@@ -1400,13 +1400,13 @@ page  address   name
 0     00008471  _HIB                                  
 0     0000848e  _ConfigureTMXAnalogTrim               
 0     000084ab  _isr_adc                              
-0     0000864b  _Setup_GPIO                           
-0     0000866b  _Setup_PWM1                           
-0     000086e4  _Setup_ADC                            
-0     00008741  FS$$DIV                               
-0     000087c9  C$$EXIT                               
-0     000087c9  _abort                                
-0     000087cb  _exit                                 
+0     00008649  _Setup_GPIO                           
+0     00008669  _Setup_PWM1                           
+0     000086e2  _Setup_ADC                            
+0     0000873f  FS$$DIV                               
+0     000087c7  C$$EXIT                               
+0     000087c7  _abort                                
+0     000087c9  _exit                                 
 0     00008800  _AdcSetMode                           
 0     000088b6  _CalAdcINL                            
 0     000088f0  _c_int00                              
@@ -1682,7 +1682,7 @@ page  address   name
 1     0000ab88  _il                                   
 1     0000ab8a  _vo                                   
 1     0000ab8c  _f                                    
-1     0000ab8e  _perc                                 
+1     0000ab8e  _aux                                  
 1     0000ab90  _Kp_IL                                
 1     0000ab92  _Ki_IL                                
 1     0000ab94  _Kp_Vo                                

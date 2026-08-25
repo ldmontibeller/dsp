@@ -13,7 +13,7 @@ uint32_t count = 0;
 float il = 0;
 float vo = 0;
 float f = 100000;
-float perc = 0.1666;
+float aux = 11.606738682736798;
 
 // Selecao de malha: 1 = Corrente Pura | 0 = Cascateado (Tensao -> Corrente)
 int malha = 1;
@@ -25,12 +25,12 @@ int malha_anterior = -1; // Variavel para detectar a transicao de malha
 
 //Ganhos Leonardo
 //Tuned with SISO tool
-float Kp_IL = 215.495981901148809 * 0.001818729486993;
-float Ki_IL = 215.495981901148809;
+//float Kp_IL = 215.495981901148809 * 0.001818729486993;
+//float Ki_IL = 215.495981901148809;
 
 ////Tuned with INEP book method
-//float Kp_IL = 332.164361002782130 * 0.001179676917495;
-//float Ki_IL = 332.164361002782130;
+float Kp_IL = 332.164361002782130 * 0.001179676917495;
+float Ki_IL = 332.164361002782130;
 
 float Kp_Vo = 33.269 * 0.00055;
 float Ki_Vo = 33.269;
@@ -62,7 +62,7 @@ float U = 0;
 
 // Referencias Globais
 float V_ref = 4.0f;
-float I_ref = 8.0f;
+float I_ref = 4.0f;
 
 __interrupt void isr_adc(void);
 
@@ -112,7 +112,8 @@ __interrupt void isr_adc(void)
 
     // BANCADA
      vo = adc_sample * 0.002914503635673 + 0.017757021714412;
-     il = adc_sample1 *(-0.005166963322187) + 11.806738682736798;
+    // il = adc_sample1 *(-0.005166963322187) + 11.806738682736798;
+    il = adc_sample1 *(-0.005166963322187) + aux;
 
     // TYPHON
     //vo = adc_sample * 0.001712959394298 -0.398833688772408;
