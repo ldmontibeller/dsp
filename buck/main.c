@@ -24,8 +24,13 @@ int malha_anterior = -1; // Variavel para detectar a transicao de malha
 // float Ki_IL = 18.289;
 
 //Ganhos Leonardo
-float Kp_IL = 271.1858 * 0.001445985684522;
-float Ki_IL = 271.1858;
+//Tuned with SISO tool
+float Kp_IL = 215.495981901148809 * 0.001818729486993;
+float Ki_IL = 215.495981901148809;
+
+////Tuned with INEP book method
+//float Kp_IL = 332.164361002782130 * 0.001179676917495;
+//float Ki_IL = 332.164361002782130;
 
 float Kp_Vo = 33.269 * 0.00055;
 float Ki_Vo = 33.269;
